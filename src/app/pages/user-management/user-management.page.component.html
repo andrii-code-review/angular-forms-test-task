@@ -1,0 +1,25 @@
+<div class="user-management-page-container">
+  <div class="container-header">
+    @if (!isLoading) {
+      <button [disabled]="atLeastOnceSubmit && !newFormAdded && formGroup.invalid" class="btn btn-primary submit-all-forms-btn" (click)="submit()">Submit All Forms</button>
+
+      <app-invalid-forms-number [form]="formGroup"></app-invalid-forms-number>
+    } @else {
+      <button [disabled]="(submitTimerValue$ | async) === 0" class="btn btn-danger submit-all-forms-btn" (click)="cancelSubmit()">Cancel</button>
+      <span class="cancel-timer">00: 0{{submitTimerValue$ | async }}</span>
+    }
+
+
+
+  </div>
+
+  <div class="user-management-page">
+    @for (form of formArrayIdx; track form) {
+      <app-create-user-form></app-create-user-form>
+    }
+
+    @if (formArrayIdx.length < 10) {
+      <button [disabled]="isLoading" class="add-create-user-form" (click)="addNewForm()">Add New User</button>
+    }
+  </div>
+</div>

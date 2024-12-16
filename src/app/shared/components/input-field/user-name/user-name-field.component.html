@@ -1,0 +1,13 @@
+<div class="user-name-field">
+  <app-input-field-ui-group
+    iconClassName="bi bi-person"
+    label="User Name"
+    (input)="onChange($event)"
+    (blur)="onTouched()"
+    [value]="value"
+    [error]="!formControl.valid && formControl.dirty ? errorMessage : null"
+    [disabled]="formControl.disabled"
+  >
+    <app-spinner [isShown]="isLoading" rightInputPlaceholder></app-spinner>
+  </app-input-field-ui-group>
+</div>

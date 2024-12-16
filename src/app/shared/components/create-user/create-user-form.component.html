@@ -1,0 +1,9 @@
+<div class="create-user-form">
+  <i class="bi bi-x close-btn" [ngClass]="{disabled: form.disabled}" (click)="onCloseClick()"></i>
+
+  <form [formGroup]="form">
+    <app-user-name-field formControlName="username" label="User Name"></app-user-name-field>
+    <app-birthday-field formControlName="birthday" label="Birthday"></app-birthday-field>
+    <app-country-list-field formControlName="country" label="Country"></app-country-list-field>
+  </form>
+</div>

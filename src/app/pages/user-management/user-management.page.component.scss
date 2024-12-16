@@ -1,0 +1,39 @@
+$standard-margin: 15px;
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.user-management-page-container {
+  .user-management-page {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    app-create-user-form,
+    .add-create-user-form {
+      margin-top: $standard-margin;
+      margin-left: $standard-margin;
+
+      min-width: 300px;
+      max-width: 400px;
+      width: 20%;
+      position: relative;
+      min-height: 360px;
+    }
+
+    .add-create-user-form {
+      border-radius: 6px;
+    }
+  }
+
+  .submit-all-forms-btn {
+    margin-left: $standard-margin;
+  }
+
+  .cancel-timer {
+    color: gray;
+    margin-left: 15px;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="birthday-field-container">
+  <app-input-field-ui-group
+    iconClassName="bi bi-calendar-check"
+    placeholder="dd.mm.yyyy"
+    label="Birthday"
+    (input)="onChange($event)"
+    (blur)="onTouched()"
+    [value]="value"
+    [error]="!formControl.valid && formControl.touched ? errorMessage : null"
+    [disabled]="disabledControl"
+  >
+    <div ngbDropdown rightInputPlaceholder>
+      <button
+        [disabled]="disabledControl"
+        type="button"
+        class="btn btn-outline-secondary bi bi-calendar3"
+        id="dropdownDatepicker1"
+        ngbDropdownToggle
+      ></button>
+      <div ngbDropdownMenu aria-labelledby="dropdownDatepicker1">
+        <ngb-datepicker [maxDate]="maxNgbDate" (dateSelect)="onDateSelect($event)"></ngb-datepicker>
+      </div>
+    </div>
+  </app-input-field-ui-group>
+</div>

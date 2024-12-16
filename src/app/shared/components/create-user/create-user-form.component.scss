@@ -1,0 +1,31 @@
+.create-user-form {
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  padding: 30px;
+  height: 100%;
+
+  form > *:not(:first-child) {
+    margin-top: 10px;
+    display: block;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    line-height: 25px;
+    border-radius: 6px;
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    &:hover {
+      font-weight: bold;
+      background: #ececec;
+    }
+  }
+}

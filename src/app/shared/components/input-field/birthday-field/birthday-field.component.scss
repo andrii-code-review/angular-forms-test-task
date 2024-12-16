@@ -1,0 +1,16 @@
+.birthday-field-container {
+  .dropdown-menu {
+    padding: 0;
+  }
+}
+
+::ng-deep {
+  .dropdown-toggle.bi-calendar3 {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:after {
+      margin-left: 5px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.spinner-icon {
+  display: none;
+  z-index: 1000;
+  font-size: 25px;
+  position: absolute;
+  right: 5px;
+  transform: rotate(0);
+  animation-name: spin;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &.show {
+    display: block;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  } to {
+      transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,22 @@
+<div class="birthday-field-container">
+  <app-input-field-ui-group
+    iconClassName="bi bi-geo-alt"
+    placeholder="Country"
+    label="Country"
+    (focus)="onFocus($event)"
+    (input)="onChange($event)"
+    (blur)="onTouched()"
+    [value]="value"
+    [error]="!formControl.valid && formControl.touched && !isInputInFocus ? errorMessage : null"
+    [disabled]="formControl.disabled"
+  >
+  </app-input-field-ui-group>
+
+  @if (isInputInFocus) {
+    <div class="country-list">
+      @for (country of suggestedCountries; track country) {
+        <div (click)="selectCountry(country)" class="county-item">{{ country }}</div>
+      }
+    </div>
+  }
+</div>

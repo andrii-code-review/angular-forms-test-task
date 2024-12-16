@@ -1,0 +1,30 @@
+<div class="input-field-ui-group">
+  @if (label) {
+    <label for="{{ fieldId }}">{{ label }}</label>
+  }
+
+  <div class="input-group">
+    @if (iconClassName) {
+      <span class="input-group-text"><i [attr.class]="iconClassName"></i></span>
+    }
+
+    <input
+      [id]="fieldId"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': !!error }"
+      [placeholder]="placeholder"
+      [value]="value"
+      (input)="onChange($event)"
+      (blur)="onBlur($event)"
+      (focus)="onFocus($event)"
+      [disabled]="disabled"
+    />
+    <ng-content select="[rightInputPlaceholder]"></ng-content>
+  </div>
+
+  @if (error) {
+    <div class="invalid-feedback">{{ error }}</div>
+  }
+
+  <ng-content select="[footerPlaceholder]"></ng-content>
+</div>
